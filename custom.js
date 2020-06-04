@@ -31,7 +31,6 @@ function execNewton(){
   $(formNewton).each(function (i, field){
     formNewtonArray[field.name] = field.value;});
   let equation = formNewtonArray['textNewtonEquation'];
-  let derivative = formNewtonArray['textNewtonDerivative'];
   let Xo = {x:formNewtonArray['textNewtonXo']};
   let formError = formNewtonArray['textNewtonError'];  
   let xoold = 0 ;
@@ -47,9 +46,9 @@ function execNewton(){
     </tr>';
   table.style.display="block";
   function calculateNewton (xo){
-      if (!derivative){
-        derivative = math.derivative(equation,'x').toString();
-      }
+      
+       let derivative = math.derivative(equation,'x').toString();
+      
       do{
         xoold = xo.x
         let xooldobj = {x:xo.x};
@@ -73,7 +72,7 @@ function execNewton(){
     <td>${math.round(error,5)}</td>\
     </tr>`;
     iter++;
-      }while(error > formError)
+      }while(error >= formError)
     
   }
   calculateNewton(Xo);
@@ -191,7 +190,7 @@ function execFalsePosition(){
       <td>${math.round(error,5)}</td>\
   </tr>`;
   iter ++;  
-    }while (error > formError)
+    }while (error >= formError)
   }else{
       alert('ERROR');
     }
@@ -264,7 +263,7 @@ function execBisection(){
       <td>${math.round(error,5)}</td>\
    </tr>`;
    iter ++;  
-    }while (error > formError)
+    }while (error >= formError)
   }else{
       alert('ERROR');
     }
