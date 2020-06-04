@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <title>Equation Solver</title>
+    
+</head>
+<body onLoad="hide_all()" style="text-align: center; vertical-align: center;">
+
+    <div>
+        <label><h1>Select Method</h1></label>
+        <select class="methods" id="methods" >
+            <option value="none" selected disabled hidden >SELECT ONE ....</option>
+            <option id="bisection">Bisection</option>
+            <option id="false-position">False Position</option>
+            <option id="fixed-point">Fixed point</option>
+            <option id="newton">Newton</option>
+        </select>
+    </div>
+   <div id="container">
+        <div class="select-option" id="id-bisection">
+            <h2>Bisection</h2>
+            <form id="formBisection" onsubmit="event.preventDefault()">
+                Enter the equation :
+                <input type="text" id="textBisectionEquation" placeholder="enter equation here" name="textBisectionEquation" required>
+                Xl :
+                <input type="text" size="1" placeholder="Xl" id="textBisectionXl" name="textBisectionXl" required>
+                Xu :
+                <input type="text" size="1" placeholder="Xu" id="textBisectionXu" name="textBisectionXu" required>
+                Error :
+                <input type="text" size="1" placeholder="Error" id="textBisectionError" name="textBisectionError" required>
+                
+                <br>
+                <input type="button" value="CALCULATE" id="btnBisection">
+                
+            </form>
+
+        </div>
+
+
+        <div class="select-option " id="id-false-position">
+            <h2>False Position</h2>
+            <form id="formFalsePosition" onsubmit="event.preventDefault()">
+                Enter the equation :
+                <input type="text" id="textFalsePositionEquation" placeholder="enter equation here" name="textFalsePositionEquation" required>
+                Xl :
+                <input type="text" size="1" placeholder="Xl" id="textFalsePositionXl" name="textFalsePositionXl" required>
+                Xu :
+                <input type="text" size="1" placeholder="Xu" id="textFalsePositionXu" name="textFalsePositionXu" required>
+                Error :
+                <input type="text" size="1" placeholder="Error" id="textFalsePositionError" name="textFalsePositionError" required>
+                <br>
+                <input type="button" value="CALCULATE" id="btnFalsePosition">
+                
+            </form>
+        </div>
+
+
+        <div class="select-option " id="id-fixed-point">
+            <h2>Simple Fixed Point</h2>
+            <form id="formFixedPoint" onsubmit="event.preventDefault()">
+                Enter the value of X :
+                <input type="text" id="textFixedPointXValue" placeholder="enter X Value" name="textFixedPointXValue" required>
+                Xo :
+                <input type="text" size="1" placeholder="Xo" id="textFixedPointXo" name="textFixedPointXo" required>
+                Error :
+                <input type="text" size="1" placeholder="Error" id="textFixedPointError" name="textFixedPointError" required>
+                <br>
+                <input type="button" value="CALCULATE" id="btnFixedPoint">
+                
+            </form>
+        </div>
+
+
+        <div class="select-option " id="id-newton">
+            <h2>Newton</h2>
+            <form id="formNewton" onsubmit="event.preventDefault()">
+                Enter the equation :
+                <input type="text" id="textNewton" placeholder="enter the equation" name="textNewtonEquation" required>
+                Enter the first derivative F`(x) :
+                <input type="text" id="textNewton" placeholder="F`(x)  --OPTIONAL--" name="textNewtonDerivative">
+                Xo :
+                <input type="text" size="1" placeholder="Xo" id="textNewtonXo" name="textNewtonXo" required>
+                Error :
+                <input type="text" size="1" placeholder="Error" id="textNewtonError" name="textNewtonError" required>
+                <br>
+                <input type="button" value="CALCULATE" id="btnNewton">
+                
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <table class="select-option" id="table">
+      
+
+        </table>
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/7.0.1/math.min.js" type="text/javascript"></script> -->
+    <!-- <script
+			  src="https://code.jquery.com/jquery-3.5.0.js"
+			  integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+              crossorigin="anonymous"></script> -->
+              
+              <script type="text/javascript" src="math.js"></script>
+              <script type="text/javascript" src="jquery-3.5.1.js"></script>
+              <script type="text/javascript" src="custom.js"></script>
+              
+</body>
+</html>
